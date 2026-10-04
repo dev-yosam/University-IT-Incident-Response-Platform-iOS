@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+    let dependencies: AppDependencies
 
-#Preview {
-    ContentView()
+    var body: some View {
+        TabView {
+            Tab("Active", systemImage: "wrench.and.screwdriver") {
+                NavigationStack {
+                    IncidentListView(
+                        model: dependencies.makeIncidentList(scope: .active), dependencies: dependencies
+                    )
+                }
+            }
+            Tab("Resolved", systemImage: "checkmark.circle") {
+                NavigationStack {
+                    IncidentListView(
+                        model: dependencies.makeIncidentList(scope: .resolved), dependencies: dependencies
+                    )
+                }
+            }
+        }
+    }
 }
