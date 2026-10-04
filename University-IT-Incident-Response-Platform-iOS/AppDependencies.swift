@@ -5,16 +5,28 @@ final class AppDependencies {
     private let persistence: PersistenceController
     private let incidents: any IncidentRepository
     private let locations: any CampusLocationRepository
+    private let widgetUpdater: IncidentWidgetUpdater
+
+    var widgetErrorMessage: String? { widgetUpdater.errorMessage }
 
     private init(persistence: PersistenceController) {
         self.persistence = persistence
-        incidents = persistence.makeIncidentRepository()
-        locations = persistence.makeLocationRepository()
+        let locations = persistence.makeLocationRepository()
+        let updater = IncidentWidgetUpdater(incidents: persistence.makeIncidentRepository(), locations: locations)
+        self.locations = locations
+        widgetUpdater = updater
+        incidents = persistence.makeIncidentRepository(onSave: { await updater.refresh() })
     }
 
     static func load() async throws -> AppDependencies {
         let persistence = try await PersistenceController()
-        return AppDependencies(persistence: persistence)
+        let dependencies = AppDependencies(persistence: persistence)
+        await dependencies.refreshWidget()
+        return dependencies
+    }
+
+    func refreshWidget() async {
+        await widgetUpdater.refresh()
     }
 
     func makeIncidentList(scope: GetIncidents.Scope) -> IncidentListViewModel {

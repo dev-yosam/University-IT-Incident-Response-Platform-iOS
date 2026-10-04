@@ -6,7 +6,22 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		046EB92D09674784A1384534 /* IncidentWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0C8B9A89D5E34A1690535FCB /* IncidentWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		36B6D6C6EB704FAC964A494A /* University-IT-Incident-Response-Platform-iOS/Models/IncidentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7070A75CE048958659F986 /* University-IT-Incident-Response-Platform-iOS/Models/IncidentStatus.swift */; };
+		36FC4D4896604D168C8AFE4B /* University-IT-Incident-Response-Platform-iOS/Models/IncidentPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48502D8E31C14AEDAA0899FC /* University-IT-Incident-Response-Platform-iOS/Models/IncidentPriority.swift */; };
+		5CE3B300114241E2AC47B4DA /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F30B620DAD46D6B1DE65C4 /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentStore.swift */; };
+		E3EA4098DFFB449AA2EE3ABC /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73D610F63A4BA99BC7B8F3 /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentSnapshot.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		060A9B3CBF364CE4A69C2FF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5197DA58306FAAF300A7779C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06EC099CC2D74EBBA33D0DC8;
+			remoteInfo = IncidentWidget;
+		};
 		5197DA6E306FAAF400A7779C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5197DA58306FAAF300A7779C /* Project object */;
@@ -23,13 +38,50 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F4831077A9A146729B4DC073 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				046EB92D09674784A1384534 /* IncidentWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0C8B9A89D5E34A1690535FCB /* IncidentWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IncidentWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		48502D8E31C14AEDAA0899FC /* University-IT-Incident-Response-Platform-iOS/Models/IncidentPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "University-IT-Incident-Response-Platform-iOS/Models/IncidentPriority.swift"; sourceTree = SOURCE_ROOT; };
 		5197DA60306FAAF300A7779C /* University-IT-Incident-Response-Platform-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "University-IT-Incident-Response-Platform-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5197DA6D306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "University-IT-Incident-Response-Platform-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5197DA77306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "University-IT-Incident-Response-Platform-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C73D610F63A4BA99BC7B8F3 /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentSnapshot.swift"; sourceTree = SOURCE_ROOT; };
+		9D7070A75CE048958659F986 /* University-IT-Incident-Response-Platform-iOS/Models/IncidentStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "University-IT-Incident-Response-Platform-iOS/Models/IncidentStatus.swift"; sourceTree = SOURCE_ROOT; };
+		C9F30B620DAD46D6B1DE65C4 /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentStore.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E91EBA1FE5B141248DE852C8 /* Exceptions for "IncidentWidget" folder in "IncidentWidget" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 06EC099CC2D74EBBA33D0DC8 /* IncidentWidget */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		40E24AD3E7D64627B4A27982 /* IncidentWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E91EBA1FE5B141248DE852C8 /* Exceptions for "IncidentWidget" folder in "IncidentWidget" target */,
+			);
+			path = IncidentWidget;
+			sourceTree = "<group>";
+		};
 		5197DA62306FAAF300A7779C /* University-IT-Incident-Response-Platform-iOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "University-IT-Incident-Response-Platform-iOS";
@@ -48,6 +100,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		42D6389C740A483AAB75FBEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5197DA5D306FAAF300A7779C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,6 +137,8 @@
 				5197DA62306FAAF300A7779C /* University-IT-Incident-Response-Platform-iOS */,
 				5197DA70306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSTests */,
 				5197DA7A306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSUITests */,
+				40E24AD3E7D64627B4A27982 /* IncidentWidget */,
+				7EBAFD13C3554E9284A73395 /* Widget Shared Sources */,
 				5197DA61306FAAF300A7779C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,13 +149,47 @@
 				5197DA60306FAAF300A7779C /* University-IT-Incident-Response-Platform-iOS.app */,
 				5197DA6D306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSTests.xctest */,
 				5197DA77306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSUITests.xctest */,
+				0C8B9A89D5E34A1690535FCB /* IncidentWidget.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7EBAFD13C3554E9284A73395 /* Widget Shared Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5C73D610F63A4BA99BC7B8F3 /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentSnapshot.swift */,
+				C9F30B620DAD46D6B1DE65C4 /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentStore.swift */,
+				9D7070A75CE048958659F986 /* University-IT-Incident-Response-Platform-iOS/Models/IncidentStatus.swift */,
+				48502D8E31C14AEDAA0899FC /* University-IT-Incident-Response-Platform-iOS/Models/IncidentPriority.swift */,
+			);
+			name = "Widget Shared Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		06EC099CC2D74EBBA33D0DC8 /* IncidentWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8ED447BF72F449F8AC514549 /* Build configuration list for PBXNativeTarget "IncidentWidget" */;
+			buildPhases = (
+				A0A9D162D7E5468E97E2E583 /* Sources */,
+				42D6389C740A483AAB75FBEB /* Frameworks */,
+				FD6E24A9D4BD4A71AB3A26A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				40E24AD3E7D64627B4A27982 /* IncidentWidget */,
+			);
+			name = IncidentWidget;
+			packageProductDependencies = (
+			);
+			productName = IncidentWidget;
+			productReference = 0C8B9A89D5E34A1690535FCB /* IncidentWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		5197DA5F306FAAF300A7779C /* University-IT-Incident-Response-Platform-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5197DA81306FAAF400A7779C /* Build configuration list for PBXNativeTarget "University-IT-Incident-Response-Platform-iOS" */;
@@ -102,10 +197,12 @@
 				5197DA5C306FAAF300A7779C /* Sources */,
 				5197DA5D306FAAF300A7779C /* Frameworks */,
 				5197DA5E306FAAF300A7779C /* Resources */,
+				F4831077A9A146729B4DC073 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				60702C2DC05341B9B80462E1 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				5197DA62306FAAF300A7779C /* University-IT-Incident-Response-Platform-iOS */,
@@ -173,6 +270,14 @@
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					06EC099CC2D74EBBA33D0DC8 = {
+						CreatedOnToolsVersion = 26.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					5197DA5F306FAAF300A7779C = {
 						CreatedOnToolsVersion = 26.2;
 						SystemCapabilities = {
@@ -205,6 +310,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				06EC099CC2D74EBBA33D0DC8 /* IncidentWidget */,
 				5197DA5F306FAAF300A7779C /* University-IT-Incident-Response-Platform-iOS */,
 				5197DA6C306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSTests */,
 				5197DA76306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSUITests */,
@@ -228,6 +334,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5197DA75306FAAF400A7779C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD6E24A9D4BD4A71AB3A26A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -258,6 +371,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0A9D162D7E5468E97E2E583 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3EA4098DFFB449AA2EE3ABC /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentSnapshot.swift in Sources */,
+				5CE3B300114241E2AC47B4DA /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentStore.swift in Sources */,
+				36B6D6C6EB704FAC964A494A /* University-IT-Incident-Response-Platform-iOS/Models/IncidentStatus.swift in Sources */,
+				36FC4D4896604D168C8AFE4B /* University-IT-Incident-Response-Platform-iOS/Models/IncidentPriority.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -271,9 +395,40 @@
 			target = 5197DA5F306FAAF300A7779C /* University-IT-Incident-Response-Platform-iOS */;
 			targetProxy = 5197DA78306FAAF400A7779C /* PBXContainerItemProxy */;
 		};
+		60702C2DC05341B9B80462E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06EC099CC2D74EBBA33D0DC8 /* IncidentWidget */;
+			targetProxy = 060A9B3CBF364CE4A69C2FF7 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		43E63B6C2678427997CB7467 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = IncidentWidget/IncidentWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IncidentWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Campus IT Incidents";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dev-yosam.University-IT-Incident-Response-Platform-iOS.IncidentWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		5197DA7F306FAAF400A7779C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -537,6 +692,32 @@
 			};
 			name = Release;
 		};
+		AA5C20E72C52402FB2BCDBAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = IncidentWidget/IncidentWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IncidentWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Campus IT Incidents";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dev-yosam.University-IT-Incident-Response-Platform-iOS.IncidentWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -572,6 +753,15 @@
 			buildConfigurations = (
 				5197DA88306FAAF400A7779C /* Debug */,
 				5197DA89306FAAF400A7779C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8ED447BF72F449F8AC514549 /* Build configuration list for PBXNativeTarget "IncidentWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA5C20E72C52402FB2BCDBAF /* Debug */,
+				43E63B6C2678427997CB7467 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

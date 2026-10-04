@@ -4,9 +4,13 @@ struct IncidentDetailView: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var model: IncidentDetailViewModel
     @State private var followUpDate = Date().addingTimeInterval(3600)
-    @State private var isUpdating = false
-    @State private var updateMode: UpdateIncidentViewModel.Mode = .progressNote
+    @State private var updateSheet: UpdateSheet?
     let dependencies: AppDependencies
+
+    private struct UpdateSheet: Identifiable {
+        let id = UUID()
+        let mode: UpdateIncidentViewModel.Mode
+    }
 
     init(model: IncidentDetailViewModel, dependencies: AppDependencies) {
         _model = State(initialValue: model)
@@ -43,12 +47,12 @@ struct IncidentDetailView: View {
         .onChange(of: model.incident?.followUpAt) { _, date in
             if let date { followUpDate = date }
         }
-        .sheet(isPresented: $isUpdating, onDismiss: {
+        .sheet(item: $updateSheet, onDismiss: {
             Task { await model.load() }
-        }) {
+        }) { sheet in
             NavigationStack {
                 UpdateIncidentView(
-                    model: dependencies.makeIncidentUpdate(id: model.incidentID, mode: updateMode)
+                    model: dependencies.makeIncidentUpdate(id: model.incidentID, mode: sheet.mode)
                 )
             }
         }
@@ -82,13 +86,11 @@ struct IncidentDetailView: View {
                 }
             }
             Button("Add progress note", systemImage: "square.and.pencil") {
-                updateMode = .progressNote
-                isUpdating = true
+                updateSheet = UpdateSheet(mode: .progressNote)
             }
             if incident.status == .inProgress {
                 Button("Resolve incident", systemImage: "checkmark.circle") {
-                    updateMode = .resolution
-                    isUpdating = true
+                    updateSheet = UpdateSheet(mode: .resolution)
                 }
             }
         }

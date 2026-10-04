@@ -1,6 +1,8 @@
 import Foundation
 
 nonisolated struct SharedIncidentSnapshot: Codable, Equatable, Sendable {
+    static let widgetKind = "IncidentWidget"
+
     let generatedAt: Date
     let activeIncidentCount: Int
     let incidents: [IncidentSummary]
