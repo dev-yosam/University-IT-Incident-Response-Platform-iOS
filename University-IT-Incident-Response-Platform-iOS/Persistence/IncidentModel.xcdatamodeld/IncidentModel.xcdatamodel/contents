@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CampusLocationEntity" representedClassName="CampusLocationEntity" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="campus" attributeType="String"/>
+        <attribute name="building" attributeType="String"/>
+        <attribute name="room" attributeType="String"/>
+        <relationship name="incidents" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="IncidentEntity" inverseName="location" inverseEntity="IncidentEntity"/>
+    </entity>
+    <entity name="IncidentEntity" representedClassName="IncidentEntity" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="details" attributeType="String"/>
+        <attribute name="priority" attributeType="String"/>
+        <attribute name="status" attributeType="String"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="followUpAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="resolvedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="location" maxCount="1" minCount="1" deletionRule="Nullify" destinationEntity="CampusLocationEntity" inverseName="incidents" inverseEntity="CampusLocationEntity"/>
+        <relationship name="updates" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="IncidentUpdateEntity" inverseName="incident" inverseEntity="IncidentUpdateEntity"/>
+    </entity>
+    <entity name="IncidentUpdateEntity" representedClassName="IncidentUpdateEntity" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="note" attributeType="String"/>
+        <attribute name="status" attributeType="String"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="incident" maxCount="1" minCount="1" deletionRule="Nullify" destinationEntity="IncidentEntity" inverseName="updates" inverseEntity="IncidentEntity"/>
+    </entity>
+</model>
