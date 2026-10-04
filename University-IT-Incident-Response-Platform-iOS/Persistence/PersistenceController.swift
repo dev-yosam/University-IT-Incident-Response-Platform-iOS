@@ -35,8 +35,8 @@ final class PersistenceController {
         try seedLocationsIfNeeded()
     }
 
-    func makeIncidentRepository() -> any IncidentRepository {
-        CoreDataIncidentRepository(context: container.viewContext)
+    func makeIncidentRepository(onSave: @escaping @MainActor () async -> Void = {}) -> any IncidentRepository {
+        CoreDataIncidentRepository(context: container.viewContext, onSave: onSave)
     }
 
     func makeLocationRepository() -> any CampusLocationRepository {

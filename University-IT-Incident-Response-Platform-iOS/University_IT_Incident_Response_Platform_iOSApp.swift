@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct University_IT_Incident_Response_Platform_iOSApp: App {
+    @Environment(\.scenePhase) private var scenePhase
     @State private var dependencies: AppDependencies?
     @State private var startupError: String?
 
@@ -32,7 +33,26 @@ struct University_IT_Incident_Response_Platform_iOSApp: App {
                     ProgressView("Opening incident records…")
                 }
             }
+            .safeAreaInset(edge: .top) {
+                if let dependencies, let error = dependencies.widgetErrorMessage {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(error)
+                        Button("Refresh widget summary") {
+                            Task { await dependencies.refreshWidget() }
+                        }
+                    }
+                    .font(.footnote)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(.regularMaterial)
+                }
+            }
             .task { await loadIncidents() }
+            .onChange(of: scenePhase) { _, phase in
+                if phase == .active, let dependencies {
+                    Task { await dependencies.refreshWidget() }
+                }
+            }
         }
     }
 

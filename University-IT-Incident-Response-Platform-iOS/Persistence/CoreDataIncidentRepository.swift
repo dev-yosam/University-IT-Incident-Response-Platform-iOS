@@ -3,9 +3,11 @@ import CoreData
 @MainActor
 final class CoreDataIncidentRepository: IncidentRepository {
     private let context: NSManagedObjectContext
+    private let onSave: @MainActor () async -> Void
 
-    init(context: NSManagedObjectContext) {
+    init(context: NSManagedObjectContext, onSave: @escaping @MainActor () async -> Void = {}) {
         self.context = context
+        self.onSave = onSave
     }
 
     // Protocol methods need explicit isolation to stay on the view context's queue.
@@ -62,6 +64,7 @@ final class CoreDataIncidentRepository: IncidentRepository {
             context.rollback()
             throw (error as? RepositoryError) ?? .saveFailed
         }
+        await onSave()
     }
 
     @MainActor
@@ -96,6 +99,7 @@ final class CoreDataIncidentRepository: IncidentRepository {
             context.rollback()
             throw (error as? RepositoryError) ?? .saveFailed
         }
+        await onSave()
     }
 
     @MainActor
