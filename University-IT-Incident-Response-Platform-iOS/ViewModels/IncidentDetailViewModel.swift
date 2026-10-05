@@ -15,17 +15,20 @@ final class IncidentDetailViewModel {
     private let getDetails: GetIncidentDetails
     private let startResponse: StartIncidentResponse
     private let scheduleFollowUp: ScheduleIncidentFollowUp
+    private let enableReminders: @MainActor () async -> Void
 
     init(
         incidentID: UUID,
         getDetails: GetIncidentDetails,
         startResponse: StartIncidentResponse,
-        scheduleFollowUp: ScheduleIncidentFollowUp
+        scheduleFollowUp: ScheduleIncidentFollowUp,
+        enableReminders: @escaping @MainActor () async -> Void = {}
     ) {
         self.incidentID = incidentID
         self.getDetails = getDetails
         self.startResponse = startResponse
         self.scheduleFollowUp = scheduleFollowUp
+        self.enableReminders = enableReminders
     }
 
     func load() async {
@@ -58,6 +61,7 @@ final class IncidentDetailViewModel {
 
         do {
             incident = try await scheduleFollowUp.execute(incidentID: incidentID, followUpAt: date)
+            await enableReminders()
         } catch {
             errorMessage = error.localizedDescription
         }

@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import UIKit
 
 @main
 struct University_IT_Incident_Response_Platform_iOSApp: App {
+    @UIApplicationDelegateAdaptor(IncidentNotificationDelegate.self) private var notificationDelegate
     @Environment(\.scenePhase) private var scenePhase
     @State private var dependencies: AppDependencies?
     @State private var startupError: String?
@@ -34,23 +36,40 @@ struct University_IT_Incident_Response_Platform_iOSApp: App {
                 }
             }
             .safeAreaInset(edge: .top) {
-                if let dependencies, let error = dependencies.widgetErrorMessage {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text(error)
-                        Button("Refresh widget summary") {
-                            Task { await dependencies.refreshWidget() }
+                VStack(spacing: 0) {
+                    if let dependencies, let error = dependencies.widgetErrorMessage {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(error)
+                            Button("Refresh widget summary") {
+                                Task { await dependencies.refreshWidget() }
+                            }
                         }
+                        .font(.footnote)
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(.regularMaterial)
                     }
-                    .font(.footnote)
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(.regularMaterial)
+                    if let dependencies, let error = dependencies.reminderErrorMessage {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(error)
+                            HStack {
+                                Button("Check reminders") {
+                                    Task { await dependencies.enableReminders() }
+                                }
+                                Link("Open Settings", destination: URL(string: UIApplication.openSettingsURLString)!)
+                            }
+                        }
+                        .font(.footnote)
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(.regularMaterial)
+                    }
                 }
             }
             .task { await loadIncidents() }
             .onChange(of: scenePhase) { _, phase in
                 if phase == .active, let dependencies {
-                    Task { await dependencies.refreshWidget() }
+                    Task { await dependencies.refreshExtensions() }
                 }
             }
         }
