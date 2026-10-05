@@ -111,7 +111,7 @@ struct IncidentDetailView: View {
         } header: {
             Text("Follow-up")
         } footer: {
-            Text("Save a time to check this incident again. It will appear in the active incident list.")
+            Text("Save a time to check this incident again. Allow notifications when asked to receive a follow-up reminder.")
         }
         .disabled(model.isLoading)
     }

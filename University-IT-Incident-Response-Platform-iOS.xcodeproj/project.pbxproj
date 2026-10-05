@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68F7513C479F42B593D567E1 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317F83E78CF449A5AD48F086 /* UserNotificationsUI.framework */; };
 		046EB92D09674784A1384534 /* IncidentWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0C8B9A89D5E34A1690535FCB /* IncidentWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		36B6D6C6EB704FAC964A494A /* University-IT-Incident-Response-Platform-iOS/Models/IncidentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7070A75CE048958659F986 /* University-IT-Incident-Response-Platform-iOS/Models/IncidentStatus.swift */; };
 		36FC4D4896604D168C8AFE4B /* University-IT-Incident-Response-Platform-iOS/Models/IncidentPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48502D8E31C14AEDAA0899FC /* University-IT-Incident-Response-Platform-iOS/Models/IncidentPriority.swift */; };
 		5CE3B300114241E2AC47B4DA /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F30B620DAD46D6B1DE65C4 /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentStore.swift */; };
 		E3EA4098DFFB449AA2EE3ABC /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73D610F63A4BA99BC7B8F3 /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentSnapshot.swift */; };
+		3F8A3E0F5A214D4FA20B555C /* IncidentNotification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB701159EC4140688ED8986B /* IncidentNotification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		783BC8BB26DA453983FBA772 /* IncidentReminderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E904E0640047259B9BEC1D /* IncidentReminderContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,13 @@
 			remoteGlobalIDString = 5197DA5F306FAAF300A7779C;
 			remoteInfo = "University-IT-Incident-Response-Platform-iOS";
 		};
+		0A1E6F38DDBE4E6D9006F6FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5197DA58306FAAF300A7779C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C772A9EC809459B835E80A2;
+			remoteInfo = IncidentNotification;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +56,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				046EB92D09674784A1384534 /* IncidentWidget.appex in Embed App Extensions */,
+				3F8A3E0F5A214D4FA20B555C /* IncidentNotification.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		317F83E78CF449A5AD48F086 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		0C8B9A89D5E34A1690535FCB /* IncidentWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IncidentWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		48502D8E31C14AEDAA0899FC /* University-IT-Incident-Response-Platform-iOS/Models/IncidentPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "University-IT-Incident-Response-Platform-iOS/Models/IncidentPriority.swift"; sourceTree = SOURCE_ROOT; };
 		5197DA60306FAAF300A7779C /* University-IT-Incident-Response-Platform-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "University-IT-Incident-Response-Platform-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +73,8 @@
 		5C73D610F63A4BA99BC7B8F3 /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentSnapshot.swift"; sourceTree = SOURCE_ROOT; };
 		9D7070A75CE048958659F986 /* University-IT-Incident-Response-Platform-iOS/Models/IncidentStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "University-IT-Incident-Response-Platform-iOS/Models/IncidentStatus.swift"; sourceTree = SOURCE_ROOT; };
 		C9F30B620DAD46D6B1DE65C4 /* University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "University-IT-Incident-Response-Platform-iOS/Shared/SharedIncidentStore.swift"; sourceTree = SOURCE_ROOT; };
+		CB701159EC4140688ED8986B /* IncidentNotification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IncidentNotification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		94E904E0640047259B9BEC1D /* IncidentReminderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "University-IT-Incident-Response-Platform-iOS/Shared/IncidentReminderContent.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -70,6 +84,11 @@
 				Info.plist,
 			);
 			target = 06EC099CC2D74EBBA33D0DC8 /* IncidentWidget */;
+		};
+		9B6959DC350A486EAE0F1C7C /* Exceptions for IncidentNotification */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (Info.plist, );
+			target = 4C772A9EC809459B835E80A2 /* IncidentNotification */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -95,6 +114,12 @@
 		5197DA7A306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "University-IT-Incident-Response-Platform-iOSUITests";
+			sourceTree = "<group>";
+		};
+		01EA3EF32E74497199D63B3B /* IncidentNotification */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (9B6959DC350A486EAE0F1C7C /* Exceptions for IncidentNotification */, );
+			path = IncidentNotification;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -128,9 +153,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		111DA44E2E304F6FAA687E56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68F7513C479F42B593D567E1 /* UserNotificationsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A9B7B2E60774B7CAC69AE0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (317F83E78CF449A5AD48F086 /* UserNotificationsUI.framework */, );
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5197DA57306FAAF300A7779C = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +178,9 @@
 				5197DA7A306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSUITests */,
 				40E24AD3E7D64627B4A27982 /* IncidentWidget */,
 				7EBAFD13C3554E9284A73395 /* Widget Shared Sources */,
+				01EA3EF32E74497199D63B3B /* IncidentNotification */,
+				01B18C10E77E45BEA2F8DBEF /* Notification Shared Sources */,
+				7A9B7B2E60774B7CAC69AE0A /* Frameworks */,
 				5197DA61306FAAF300A7779C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -149,6 +191,7 @@
 				5197DA60306FAAF300A7779C /* University-IT-Incident-Response-Platform-iOS.app */,
 				5197DA6D306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSTests.xctest */,
 				5197DA77306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSUITests.xctest */,
+				CB701159EC4140688ED8986B /* IncidentNotification.appex */,
 				0C8B9A89D5E34A1690535FCB /* IncidentWidget.appex */,
 			);
 			name = Products;
@@ -163,6 +206,14 @@
 				48502D8E31C14AEDAA0899FC /* University-IT-Incident-Response-Platform-iOS/Models/IncidentPriority.swift */,
 			);
 			name = "Widget Shared Sources";
+			sourceTree = "<group>";
+		};
+		01B18C10E77E45BEA2F8DBEF /* Notification Shared Sources */ = {
+			isa = PBXGroup;
+			children = (
+				94E904E0640047259B9BEC1D /* IncidentReminderContent.swift */,
+			);
+			name = "Notification Shared Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +254,7 @@
 			);
 			dependencies = (
 				60702C2DC05341B9B80462E1 /* PBXTargetDependency */,
+				6A2057E804AB4BC49EBF765E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				5197DA62306FAAF300A7779C /* University-IT-Incident-Response-Platform-iOS */,
@@ -260,6 +312,23 @@
 			productReference = 5197DA77306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		4C772A9EC809459B835E80A2 /* IncidentNotification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98BC7A8189E549759E928B53 /* Build configuration list for IncidentNotification */;
+			buildPhases = (
+				477DAD40875C47EF9E843DB4 /* Sources */,
+				111DA44E2E304F6FAA687E56 /* Frameworks */,
+				D3170AB770B4499AAEDAB06C /* Resources */,
+			);
+			buildRules = ();
+			dependencies = ();
+			fileSystemSynchronizedGroups = (01EA3EF32E74497199D63B3B /* IncidentNotification */, );
+			name = IncidentNotification;
+			packageProductDependencies = ();
+			productName = IncidentNotification;
+			productReference = CB701159EC4140688ED8986B /* IncidentNotification.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -270,6 +339,9 @@
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					4C772A9EC809459B835E80A2 = {
+						CreatedOnToolsVersion = 26.2;
+					};
 					06EC099CC2D74EBBA33D0DC8 = {
 						CreatedOnToolsVersion = 26.2;
 						SystemCapabilities = {
@@ -310,6 +382,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				4C772A9EC809459B835E80A2 /* IncidentNotification */,
 				06EC099CC2D74EBBA33D0DC8 /* IncidentWidget */,
 				5197DA5F306FAAF300A7779C /* University-IT-Incident-Response-Platform-iOS */,
 				5197DA6C306FAAF400A7779C /* University-IT-Incident-Response-Platform-iOSTests */,
@@ -341,6 +414,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FD6E24A9D4BD4A71AB3A26A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3170AB770B4499AAEDAB06C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -382,6 +462,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		477DAD40875C47EF9E843DB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				783BC8BB26DA453983FBA772 /* IncidentReminderContent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -399,6 +487,11 @@
 			isa = PBXTargetDependency;
 			target = 06EC099CC2D74EBBA33D0DC8 /* IncidentWidget */;
 			targetProxy = 060A9B3CBF364CE4A69C2FF7 /* PBXContainerItemProxy */;
+		};
+		6A2057E804AB4BC49EBF765E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C772A9EC809459B835E80A2 /* IncidentNotification */;
+			targetProxy = 0A1E6F38DDBE4E6D9006F6FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -718,6 +811,48 @@
 			};
 			name = Debug;
 		};
+		586933D0859D4D4281DC182B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IncidentNotification/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Incident Follow-up";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks", );
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dev-yosam.University-IT-Incident-Response-Platform-iOS.IncidentNotification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		59CF2DFF66FE407E9479A471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IncidentNotification/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Incident Follow-up";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks", );
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dev-yosam.University-IT-Incident-Response-Platform-iOS.IncidentNotification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -763,6 +898,12 @@
 				AA5C20E72C52402FB2BCDBAF /* Debug */,
 				43E63B6C2678427997CB7467 /* Release */,
 			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98BC7A8189E549759E928B53 /* Build configuration list for IncidentNotification */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (586933D0859D4D4281DC182B /* Debug */, 59CF2DFF66FE407E9479A471 /* Release */, );
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
