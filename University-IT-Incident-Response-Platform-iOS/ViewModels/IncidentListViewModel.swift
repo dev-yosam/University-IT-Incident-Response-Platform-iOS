@@ -10,6 +10,7 @@ final class IncidentListViewModel {
     private(set) var errorMessage: String?
 
     private let getIncidents: GetIncidents
+    private var reloadRequested = false
 
     init(scope: GetIncidents.Scope, getIncidents: GetIncidents) {
         self.scope = scope
@@ -17,15 +18,24 @@ final class IncidentListViewModel {
     }
 
     func load() async {
+        reloadRequested = true
         guard !isLoading else { return }
         isLoading = true
         errorMessage = nil
         defer { isLoading = false }
 
-        do {
-            incidents = try await getIncidents.execute(scope: scope)
-        } catch {
-            errorMessage = error.localizedDescription
-        }
+        repeat {
+            reloadRequested = false
+            do {
+                let latest = try await getIncidents.execute(scope: scope)
+                // A refresh requested during this read needs a newer result.
+                if reloadRequested { continue }
+                incidents = latest
+                errorMessage = nil
+            } catch {
+                if reloadRequested { continue }
+                errorMessage = error.localizedDescription
+            }
+        } while reloadRequested
     }
 }
