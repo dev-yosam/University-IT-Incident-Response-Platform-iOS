@@ -79,3 +79,7 @@ Select the main app scheme and an iOS simulator. In Xcode's Test navigator, run 
 The unit tests use mock repositories to check Use Cases and repository behavior. They cover reporting incidents, starting work, progress notes, resolution, follow-up dates, queries, and domain validation. Error cases include blank input, a follow-up time that is not in the future, and a failed save.
 
 For a manual check, report an incident, add a progress note, and set a follow-up. Close and reopen the app to check that the data remains. Resolve the incident and check its history in the Resolved tab.
+
+AI assistance
+
+I used an AI assistant to explain unfamiliar iOS concepts and help draft and revise parts of the app's code. This included areas such as WidgetKit setup, App Group data sharing, notification extensions, and debugging. I also used AI to generate the app icon and provide an initial architecture sketch, which I developed further in draw.io.
