@@ -1,6 +1,6 @@
-University IT Incident Response Platform
+Campus IT
 
-This SwiftUI helps campus IT field support staff record classroom equipment problems, track their work, and plan follow-up checks.
+Campus IT is a SwiftUI app for campus IT field support staff. It helps them record classroom equipment problems, track their work, and plan follow-up checks.
 
 Who the app is for
 
@@ -56,7 +56,7 @@ Setup
 
 Development and simulator checks used Xcode 26.2 and an iPhone 17 Pro simulator with iOS 26.2. The project's minimum iOS version is 26.2.
 
-Open University-IT-Incident-Response-Platform-iOS.xcodeproj in Xcode. Select the University-IT-Incident-Response-Platform-iOS scheme and an iOS 26.2 simulator. Press Command-R to build and run the main app. Both extensions are included in the build.
+Open University-IT-Incident-Response-Platform-iOS.xcodeproj in Xcode. Select the University-IT-Incident-Response-Platform-iOS scheme and an iOS 26.2 simulator. Press Command-R to build and run the main app. It appears as Campus IT on the Home Screen. Both extensions are included in the build.
 
 Sample campus locations are added on the first launch. Report an incident to create your first record.
 
