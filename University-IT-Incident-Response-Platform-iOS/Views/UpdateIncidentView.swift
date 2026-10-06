@@ -3,6 +3,7 @@ import SwiftUI
 struct UpdateIncidentView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var model: UpdateIncidentViewModel
+    @FocusState private var isNoteFocused: Bool
 
     init(model: UpdateIncidentViewModel) {
         _model = State(initialValue: model)
@@ -22,6 +23,7 @@ struct UpdateIncidentView: View {
                     isResolution ? "Describe how you fixed the problem" : "Describe your progress",
                     text: $model.note, axis: .vertical
                 )
+                .focused($isNoteFocused)
                 .lineLimit(5...10)
                 .accessibilityIdentifier("incidentNote")
             } header: {
@@ -36,6 +38,10 @@ struct UpdateIncidentView: View {
         .navigationTitle(isResolution ? "Resolve Incident" : "Add Progress Note")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") { isNoteFocused = false }
+            }
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel") { dismiss() }
                     .disabled(model.isSaving)

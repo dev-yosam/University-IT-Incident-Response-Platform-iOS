@@ -3,6 +3,12 @@ import SwiftUI
 struct ReportIncidentView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var model: ReportIncidentViewModel
+    @FocusState private var focusedField: Field?
+
+    private enum Field: Hashable {
+        case title
+        case details
+    }
 
     init(model: ReportIncidentViewModel) {
         _model = State(initialValue: model)
@@ -17,8 +23,10 @@ struct ReportIncidentView: View {
             }
             Section("Equipment problem") {
                 TextField("Incident title", text: $model.title)
+                    .focused($focusedField, equals: .title)
                     .accessibilityIdentifier("incidentTitle")
                 TextField("Describe what is not working", text: $model.details, axis: .vertical)
+                    .focused($focusedField, equals: .details)
                     .lineLimit(4...8)
                     .accessibilityIdentifier("incidentDetails")
             }
@@ -50,6 +58,10 @@ struct ReportIncidentView: View {
         .navigationTitle("Report Incident")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") { focusedField = nil }
+            }
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel") { dismiss() }
                     .disabled(model.isSaving)
